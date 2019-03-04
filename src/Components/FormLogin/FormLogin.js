@@ -3,7 +3,8 @@
  */
 import React, {Component} from 'react';
 import TextBox from '../TextBox/Textbox'
-
+import labels from './Labels/LoginLabels'
+import GlobalLabels from '../../Labels/GlobalLabels'
 
 class FormLogin extends Component {
     constructor(props) {
@@ -23,12 +24,12 @@ class FormLogin extends Component {
         return (
             <div className="container">
                 <TextBox id="Usuario"
-                         ph="Usuario"
-                         label="Usuario"
+                         ph={labels.inputs.phUser}
+                         label={labels.inputs.userName}
                          type='text'
                          mandatory/>
                 <TextBox id="password"
-                         label="Contraseña"
+                         label={labels.inputs.password}
                          type='password'
                          mandatory/>
                 <div className="row">
@@ -36,7 +37,7 @@ class FormLogin extends Component {
                         <button type="button"
                                className="btn btn-primary"
                                onClick={this.login}>
-                            <span>Ingresar </span><i className="fa fa-arrow-right"></i>
+                            <span>{labels.buttons.login} </span><i className="fa fa-arrow-right"></i>
                         </button>
                     </div>
                 </div>
