@@ -3,10 +3,10 @@
  */
 import React, {Component} from 'react';
 import TextBox from '../TextBox/Textbox'
-import labels from './Labels/LoginLabels'
+import labels from './Labels/RegisterLabels'
 import GlobalLabels from '../../Labels/GlobalLabels'
 
-class FormLogin extends Component {
+class FormRegister extends Component {
     constructor(props) {
         super(props);
 
@@ -28,16 +28,25 @@ class FormLogin extends Component {
                          label={labels.inputs.userName}
                          type='text'
                          mandatory/>
+                <TextBox id="Usuario"
+                         ph={labels.inputs.phEmail}
+                         label={labels.inputs.email}
+                         type='text'
+                         mandatory/>
                 <TextBox id="password"
                          label={labels.inputs.password}
+                         type='password'
+                         mandatory/>
+                <TextBox id="password"
+                         label={labels.inputs.retryPassword}
                          type='password'
                          mandatory/>
                 <div className="row">
                     <div className="col-sm-12 text-center">
                         <button type="button"
-                               className="btn btn-primary"
-                               onClick={this.login}>
-                            <span>{labels.buttons.login} </span><i className="fa fa-arrow-right"></i>
+                                className="btn btn-primary"
+                                onClick={this.login}>
+                            <span>{labels.buttons.register} </span><i className="fa fa-arrow-right"></i>
                         </button>
                     </div>
                 </div>
@@ -46,4 +55,4 @@ class FormLogin extends Component {
         );
     }
 }
-export default FormLogin;
+export default FormRegister;

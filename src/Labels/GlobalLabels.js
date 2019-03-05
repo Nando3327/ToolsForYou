@@ -10,6 +10,10 @@ var defaultLabels = {
     },
     buttons: {
         search: 'Consultar'
+    },
+    app:{
+        register: 'Regístrate',
+        login: 'Login'
     }
 };
 export default defaultLabels;
