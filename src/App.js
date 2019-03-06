@@ -30,7 +30,7 @@ class App extends Component {
                 <header className="App-header">
                     <div className="container">
                         <img src={logo} className="App-logo" alt="logo"/>
-                        <div class="row">
+                        <div className="row">
                             {dataShow}
                         </div>
                         <div className="form-group row">
