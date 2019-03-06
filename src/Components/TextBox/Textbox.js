@@ -2,6 +2,7 @@
  * Created by Fernando on 03/03/19.
  */
 import React, {Component} from 'react';
+import labels from './Labels/TextboxLabels'
 
 class Textbox extends Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class Textbox extends Component {
 
     mandatoryChange = event => {
         this.setState({
-            note: (event.target.value !== '') ? '' : 'Campo obligatorio'
+            note: (event.target.value !== '') ? '' : labels.mandatoryField
         })
     };
 
