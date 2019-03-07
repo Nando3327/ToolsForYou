@@ -16,14 +16,14 @@ class Routers extends Component {
                 <div>
                     <ul>
                         <li>
-                            <Link to="/Login">{labels.tittles.login}</Link>
+                            <Link to="/">{labels.tittles.login}</Link>
                         </li>
                         <li>
                             <Link to="/Register">{labels.tittles.register}</Link>
                         </li>
                     </ul>
 
-                    <Route exact path="/"/>
+                    <Route exact path="/" component={LoginForm}/>
                     <Route exact path="/Register" component={RegisterForm}/>
                 </div>
             </Router>

@@ -24,6 +24,9 @@ class App extends Component {
             showLogin: !this.state.showLogin,
         })
     };
+// <div className="row">
+// {dataShow}
+// </div>
 
     render() {
         var dataShow = this.state.showLogin ? <LoginForm /> : <RegisterForm />;
@@ -33,13 +36,10 @@ class App extends Component {
             <div className="App">
                 <header className="App-header">
                     <div className="container">
-                        <div className="row">
-                            <Routers />
-                        </div>
                         <img src={logo} className="App-logo" alt="logo"/>
                         <div id="ContentShow">
                             <div className="row">
-                                {dataShow}
+                                <Routers />
                             </div>
                             <div className="form-group row">
                                 <div className="col-md-4 col-md-offset-4">
