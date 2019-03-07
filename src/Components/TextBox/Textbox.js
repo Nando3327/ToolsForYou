@@ -8,13 +8,26 @@ class Textbox extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            note: ''
+            note: '',
+            value: ''
         };
     }
 
+    getData = () => {
+        return this.state;
+    };
+
+    setNote = (value) => {
+        this.setState({
+            note: (value !== '') ? '' : labels.mandatoryField
+        })
+    };
+
+
     mandatoryChange = event => {
         this.setState({
-            note: (event.target.value !== '') ? '' : labels.mandatoryField
+            note: (event.target.value !== '') ? '' : labels.mandatoryField,
+            value: event.target.value
         })
     };
 

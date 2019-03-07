@@ -18,8 +18,13 @@ class FormLogin extends Component {
     }
 
     login = (arg) => (event) => {
-        var a =this.state.inputs; 
-        alert(arg);
+        var username = this._username.getData().value;
+        var password = this._password.getData().value;
+        if(username === '' || password === ''){
+            this._username.setNote(username);
+            this._password.setNote(password);
+            return;
+        }
     };
 
     render() {
@@ -30,12 +35,12 @@ class FormLogin extends Component {
                              ph={labels.inputs.phUser}
                              label={labels.inputs.userName}
                              type='text'
-                             value={this.state.usrName}
+                             ref={(ref) => this._username = ref}
                              mandatory/>
                     <TextBox id="password"
                              label={labels.inputs.password}
                              type='password'
-                             value={this.state.password}
+                             ref={(ref) => this._password = ref}
                              mandatory/>
                     <div className="row">
                         <div className="col-sm-12 text-center">
