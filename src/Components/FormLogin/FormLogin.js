@@ -6,6 +6,7 @@ import TextBox from '../TextBox/Textbox'
 import labels from './Labels/LoginLabels'
 import GlobalLabels from '../../Labels/GlobalLabels'
 
+
 class FormLogin extends Component {
     constructor(props) {
         super(props);
@@ -16,6 +17,7 @@ class FormLogin extends Component {
             inputs: [<TextBox/>],
         };
     }
+    
 
     login = (arg) => (event) => {
         var username = this._username.getData().value;
@@ -27,9 +29,11 @@ class FormLogin extends Component {
         }
     };
 
+
+
     render() {
         return (
-            <div className="col-sm-12">
+            <div className="col-sm-12" id="visibleForm">
                 <form id="loginForm">
                     <TextBox id="Usuario"
                              ph={labels.inputs.phUser}

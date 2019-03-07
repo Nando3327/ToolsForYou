@@ -23,21 +23,21 @@ class FormRegister extends Component {
     render() {
         return (
             <div className="col-sm-12">
-                <TextBox id="Usuario"
+                <TextBox id="UsuarioRegister"
                          ph={labels.inputs.phUser}
                          label={labels.inputs.userName}
                          type='text'
                          mandatory/>
-                <TextBox id="Usuario"
+                <TextBox id="EmailRegister"
                          ph={labels.inputs.phEmail}
                          label={labels.inputs.email}
                          type='text'
                          mandatory/>
-                <TextBox id="password"
+                <TextBox id="PasswordRegister"
                          label={labels.inputs.password}
                          type='password'
                          mandatory/>
-                <TextBox id="password"
+                <TextBox id="passwordRetryRegister"
                          label={labels.inputs.retryPassword}
                          type='password'
                          mandatory/>
