@@ -24,14 +24,7 @@ class App extends Component {
             showLogin: !this.state.showLogin,
         })
     };
-// <div className="row">
-// {dataShow}
-// </div>
-
     render() {
-        var dataShow = this.state.showLogin ? <LoginForm /> : <RegisterForm />;
-        var labelsShow = this.state.showLogin ? <label>{GlobalLabels.app.register}</label> :
-            <label>{GlobalLabels.app.login}</label>;
         return (
             <div className="App">
                 <header className="App-header">
@@ -40,15 +33,6 @@ class App extends Component {
                         <div id="ContentShow">
                             <div className="row">
                                 <Routers />
-                            </div>
-                            <div className="form-group row">
-                                <div className="col-md-4 col-md-offset-4">
-                                    <button type="button"
-                                            className="btn btn-link"
-                                            onClick={this.register}>
-                                        {labelsShow}
-                                    </button>
-                                </div>
                             </div>
                         </div>
                     </div>

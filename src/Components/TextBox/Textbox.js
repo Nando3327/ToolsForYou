@@ -36,8 +36,8 @@ class Textbox extends Component {
 
     render() {
         //To add a note adds mandatory and the value note in the father
-        var noteValue = (this.props.mandatory) ? <small className="form-text text-muted">{this.state.note}</small> : '';
-        var functionMandatory = (this.props.mandatory) ? this.mandatoryChange : this.noMandatoryChange;
+        let noteValue = (this.props.mandatory) ? <small className="form-text text-muted">{this.state.note}</small> : '';
+        let functionMandatory = (this.props.mandatory) ? this.mandatoryChange : this.noMandatoryChange;
         return (
             <div className="form-group row">
                 <label className="col-sm-4">{this.props.label}</label>

@@ -20,12 +20,11 @@ class FormLogin extends Component {
     
 
     login = (arg) => (event) => {
-        var username = this._username.getData().value;
-        var password = this._password.getData().value;
+        let username = this._username.getData().value;
+        let password = this._password.getData().value;
         if(username === '' || password === ''){
             this._username.setNote(username);
             this._password.setNote(password);
-            return;
         }
     };
 
