@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+$primary: #52BBD5;
+$secondary: #2f3238;
+$bg-color: white;
+$textColor: white;
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+button.btn.btn-primary.active{
+    background-color: black !important;
+}
+
+body{
+    background-color: $bg-color;
+
+}

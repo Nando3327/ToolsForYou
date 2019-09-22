@@ -4,9 +4,10 @@
 import React, {Component} from 'react';
 import labels from './Labels/RouterLabels'
 import GlobalLabels from '../../Labels/GlobalLabels'
+import '../../App.css';
 import RegisterForm from '../FormRegister/FormRegister'
 import LoginForm from '../FormLogin/FormLogin'
-import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+import {BrowserRouter as Router, Route, Link, Switch, Redirect} from "react-router-dom";
 import logo from '../../logo.svg';
 
 
@@ -18,40 +19,86 @@ class Routers extends Component {
             showLogin: true,
         };
     }
-    register = (event) => {
+
+    register = () => {
         this.setState({
             showLogin: !this.state.showLogin,
         })
     };
+
     render() {
+        let routeArrLogin = [labels.texts.haveAccount, '/', labels.tittles.login];
+        let routeArrRegister = [labels.texts.dontHaveAccount, '/Register', labels.tittles.register];
+        let route = this.state.showLogin ? routeArrRegister : routeArrLogin;
+        let routeComponent = this.state.showLogin ? <LoginForm/> : <RegisterForm/>;
         return (
             <Router>
-                <div className="App">
-                    <header className="App-header">
-                        <div className="container">
-                            <img src={logo} className="App-logo" alt="logo"/>
-                            <div id="ContentShow">
-                                <div className="row">
-                                    <div>
-                                        <ul>
-                                            <li>
-                                                <Link to="/">{labels.tittles.login}</Link>
-                                            </li>
-                                            <li>
-                                                <Link to="/Register">{labels.tittles.register}</Link>
-                                            </li>
-                                        </ul>
-
-                                        <Route exact path="/" component={LoginForm}/>
-                                        <Route exact path="/Register" component={RegisterForm}/>
-                                    </div>
+                <div className="container">
+                    <div className="row sidenav parallax-section">
+                        <div className="col-md-12">
+                            <img className="logoSize" src="http://cosarcotouring.com//img/CosarcoLogo.png"/>
+                        </div>
+                        <div className="separetorLogin col-md-12">
+                            <hr className="u"/>
+                            <br/>
+                            <hr className="d"/>
+                        </div>
+                        <div className="col-md-12 login-main-text">
+                            <div>
+                                <h2><strong>{labels.locationContact}</strong></h2>
+                                <div className="clearfix">
+                                    <i className="fa fa-home fa-lg"></i>
+                                    <span>{labels.addres}<br/>
+                                        {labels.addres2}<br/>
+                                        {labels.addres3}
+                                                </span>
+                                </div>
+                                <div className="con-info clearfix">
+                                    <i className="fa fa-phone fa-lg"></i>
+                                    <span className="color">Teléfono: +593 (02)60-10-799</span>
+                                </div>
+                                <div className="con-info clearfix">
+                                    <i className="fa fa-envelope fa-lg"></i>
+                                    <span className="color">Email: paola@cosarcotouring.com</span>
                                 </div>
                             </div>
                         </div>
-                    </header>
+                        <div className="row visitLogin">
+                            <div className="col-lg-12 text-center">
+                                <div className="twitter-bird">
+							                <span>
+                                                <a href="https://www.facebook.com/Cosarco-Touring-303355106793032/"
+                                                   target="_blank"
+                                                   className="btn btn-link"><i className="fa fa-facebook fa-4x"></i></a>
+                                           </span>
+                                    <span>
+                                                <a href="https://twitter.com/amimorshed" target="_blank"
+                                                   className="btn btn-link"><i className="fa fa-twitter fa-4x"></i></a>
+				                			</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ContentShow" className="row main">
+                        <div className="col-md-6 col-sm-12">
+                            <div className="login-form">
+                                <h2>{labels.loginHead}</h2>
+                                {/*<Route exact path="/" component={LoginForm}/>*/}
+                                {/*<Route exact path="/Register" component={RegisterForm}/>*/}
+                                {/*<span>{route[0]}</span>*/}
+                                <button className="btn btn-link"
+                                onClick={this.register}>
+                                regi
+                                    {/*<Link to={route[1]}>{route[2]}</Link>*/}
+                                </button>
+                                {routeComponent}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </Router>
         );
     }
 }
+
 export default Routers;

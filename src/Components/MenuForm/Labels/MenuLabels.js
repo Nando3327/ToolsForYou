@@ -3,7 +3,7 @@
  */
 
 
-var loginLabels = {
+var menuLabels = {
     inputs: {
         userName: 'Usuario',
         password: 'Contraseña',
@@ -14,4 +14,4 @@ var loginLabels = {
         login: 'Ingresar'
     }
 };
-export default loginLabels;
+export default menuLabels;
