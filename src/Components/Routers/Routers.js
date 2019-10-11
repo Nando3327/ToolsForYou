@@ -29,7 +29,8 @@ class Routers extends Component {
     render() {
         let routeArrLogin = [labels.texts.haveAccount, '/', labels.tittles.login];
         let routeArrRegister = [labels.texts.dontHaveAccount, '/Register', labels.tittles.register];
-        let route = this.state.showLogin ? routeArrRegister : routeArrLogin;
+        //let route = this.state.showLogin ? routeArrRegister : routeArrLogin;
+        let route = this.state.showLogin ? labels.tittles.register : labels.tittles.login;
         let routeComponent = this.state.showLogin ? <LoginForm/> : <RegisterForm/>;
         return (
             <Router>
@@ -86,12 +87,12 @@ class Routers extends Component {
                                 {/*<Route exact path="/" component={LoginForm}/>*/}
                                 {/*<Route exact path="/Register" component={RegisterForm}/>*/}
                                 {/*<span>{route[0]}</span>*/}
+                                {routeComponent}
                                 <button className="btn btn-link"
-                                onClick={this.register}>
-                                regi
+                                        onClick={this.register}>
+                                    {route}
                                     {/*<Link to={route[1]}>{route[2]}</Link>*/}
                                 </button>
-                                {routeComponent}
                             </div>
                         </div>
                     </div>
