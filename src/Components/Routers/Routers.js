@@ -27,9 +27,6 @@ class Routers extends Component {
     };
 
     render() {
-        let routeArrLogin = [labels.texts.haveAccount, '/', labels.tittles.login];
-        let routeArrRegister = [labels.texts.dontHaveAccount, '/Register', labels.tittles.register];
-        //let route = this.state.showLogin ? routeArrRegister : routeArrLogin;
         let route = this.state.showLogin ? labels.tittles.register : labels.tittles.login;
         let routeComponent = this.state.showLogin ? <LoginForm/> : <RegisterForm/>;
         return (
