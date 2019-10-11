@@ -84,14 +84,10 @@ class Routers extends Component {
                         <div className="col-md-6 col-sm-12">
                             <div className="login-form">
                                 <h2>{labels.loginHead}</h2>
-                                {/*<Route exact path="/" component={LoginForm}/>*/}
-                                {/*<Route exact path="/Register" component={RegisterForm}/>*/}
-                                {/*<span>{route[0]}</span>*/}
                                 {routeComponent}
                                 <button className="btn btn-link"
                                         onClick={this.register}>
                                     {route}
-                                    {/*<Link to={route[1]}>{route[2]}</Link>*/}
                                 </button>
                             </div>
                         </div>
