@@ -3,11 +3,11 @@
  */
 
 
-const routerLabels = {
+const loginLabels = {
     tittles:{
         login: 'Ingresa',
         register: 'Registrate'
     },
     loginHead: 'Iniciar Sesión'
 };
-export default routerLabels;
+export default loginLabels;

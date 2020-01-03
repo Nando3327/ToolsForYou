@@ -3,7 +3,7 @@
  */
 
 
-var registerLabels = {
+const registerLabels = {
     inputs: {
         userName: 'Usuario',
         password: 'Contraseña',

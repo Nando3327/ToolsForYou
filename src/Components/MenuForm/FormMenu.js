@@ -3,10 +3,6 @@
  */
 import React, {Component} from 'react';
 import TextBox from '../TextBox/Textbox'
-import labels from './Labels/MenuLabels'
-import GlobalLabels from '../../Labels/GlobalLabels'
-import {BrowserRouter as Router, Route, Link, Switch, Redirect} from "react-router-dom";
-
 
 class FormMenu extends Component {
     constructor(props) {
@@ -19,20 +15,6 @@ class FormMenu extends Component {
             inputs: [<TextBox/>]
         };
     }
-
-
-    login = (arg) => (event) => {
-        let username = this._username.getData().value;
-        let password = this._password.getData().value;
-        if (username === '' || password === '') {
-            this._username.setNote(username);
-            this._password.setNote(password);
-        } else {
-            this.setState({
-                redirect: !this.state.redirect,
-            })
-        }
-    };
 
     render() {
         return (

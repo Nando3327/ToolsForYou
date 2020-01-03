@@ -4,7 +4,6 @@
 import React, {Component} from 'react';
 import TextBox from '../TextBox/Textbox'
 import labels from './Labels/RegisterLabels'
-import GlobalLabels from '../../Labels/GlobalLabels'
 
 class FormRegister extends Component {
     constructor(props) {
@@ -55,4 +54,5 @@ class FormRegister extends Component {
         );
     }
 }
+
 export default FormRegister;

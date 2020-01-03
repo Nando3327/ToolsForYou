@@ -4,9 +4,6 @@
 import React, {Component} from 'react';
 import TextBox from '../TextBox/Textbox'
 import labels from './Labels/LoginLabels'
-import GlobalLabels from '../../Labels/GlobalLabels'
-import {BrowserRouter as Router, Route, Link, Switch, Redirect} from "react-router-dom";
-import FormMenu from "../MenuForm/FormMenu";
 
 
 class FormLogin extends Component {
@@ -16,33 +13,26 @@ class FormLogin extends Component {
         this.state = {
             usrName: '',
             password: '',
-            redirect: false,
             inputs: [<TextBox/>]
         };
     }
-    
 
-    login = (arg) => (event) => {
+
+    login = () => () => {
         let username = this._username.getData().value;
         let password = this._password.getData().value;
-        if(username === '' || password === ''){
+        if (username === '' || password === '') {
             this._username.setNote(username);
             this._password.setNote(password);
-        }else{
-            this.setState({
-                redirect: !this.state.redirect,
-            })
+        } else {
+            this.props.parentCallback("OK");
         }
     };
 
     render() {
-        let redirectMenu = (this.state.redirect) ? <Redirect to="/Menu" /> : <Redirect to="/" />;
         return (
-            <Router>
-                <div className="col-sm-12" id="visibleForm">
-                    <Route exact path="/Menu" component={FormMenu}/>
-                    {redirectMenu}
-                    {(this.state.redirect) ? '' :
+            <div className="col-sm-12" id="visibleForm">
+                {(this.state.redirect) ? '' :
                     <form id="loginForm">
                         <TextBox id="Usuario"
                                  ph={labels.inputs.phUser}
@@ -65,10 +55,10 @@ class FormLogin extends Component {
                                 </button>
                             </div>
                         </div>
-                    </form> }
-                </div>
-            </Router>
+                    </form>}
+            </div>
         );
     }
 }
+
 export default FormLogin;
