@@ -11,12 +11,25 @@ class FormRegister extends Component {
 
         this.state = {
             usrName: '',
-            password: ''
+            email: '',
+            password: '',
+            confirmPassword: ''
         };
     }
 
-    login = () => {
-        alert('Hello World!');
+    register = () => {
+        let username = this._username.getData().value;
+        let email = this._email.getData().value;
+        let password = this._password.getData().value;
+        let confirmPassword = this._confirmPassword.getData().value;
+        if (username === '' || email === '' || password === '' || confirmPassword === '') {
+            this._username.setNote(username);
+            this._email.setNote(email);
+            this._password.setNote(password);
+            this._confirmPassword.setNote(confirmPassword);
+        } else {
+            this.props.parentCallback("OK");
+        }
     };
 
     render() {
@@ -26,25 +39,29 @@ class FormRegister extends Component {
                          ph={labels.inputs.phUser}
                          label={labels.inputs.userName}
                          type='text'
+                         ref={(ref) => this._username = ref}
                          mandatory/>
                 <TextBox id="EmailRegister"
                          ph={labels.inputs.phEmail}
                          label={labels.inputs.email}
-                         type='text'
+                         ref={(ref) => this._email = ref}
+                         type='email'
                          mandatory/>
                 <TextBox id="PasswordRegister"
                          label={labels.inputs.password}
                          type='password'
+                         ref={(ref) => this._password = ref}
                          mandatory/>
                 <TextBox id="passwordRetryRegister"
                          label={labels.inputs.retryPassword}
+                         ref={(ref) => this._confirmPassword = ref}
                          type='password'
                          mandatory/>
                 <div className="row">
                     <div className="col-sm-12 text-center">
                         <button type="button"
                                 className="btn btn-primary"
-                                onClick={this.login}>
+                                onClick={this.register}>
                             <span>{labels.buttons.register} </span><i className="fa fa-arrow-right"></i>
                         </button>
                     </div>
